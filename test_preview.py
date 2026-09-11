@@ -153,7 +153,7 @@ class PreviewTests(unittest.TestCase):
         self.assertEqual(8, len(poem.splitlines()))
         self.assertIn('aria-labelledby="spider-poem-title"', html)
         self.assertNotIn('archive/source-drop', html)
-        self.assertIn('not a newly encoded payload', html)
+        self.assertIn('Eight lines from the original web, preserved word for word.', html)
         self.assertIn("'aeiou'.includes(lower)?0x1D41A:0x1D5BA", html)
         self.assertIn("voice==='mono'", html)
         self.assertIn("voice==='double'", html)

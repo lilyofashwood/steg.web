@@ -3,6 +3,7 @@
 !/.gitignore
 !/README.md
 !/PREVIEW.md
+!/LICENSE
 !/index.html
 !/preview.py
 !/test_preview.py
