@@ -7,6 +7,8 @@ import threading
 import unittest
 import re
 import unicodedata
+import json
+from urllib.parse import urlsplit
 
 import preview
 
@@ -204,7 +206,7 @@ class PreviewTests(unittest.TestCase):
         self.assertEqual({'ghost-hex', 'twitterpainted', 'zalgo-cipher', 'ouroboros-cipher',
                           'chatlog-printer', 'melody-cipher', 'moon-tears', 'hexmoji', 'font-garden', 'diacritic-bloom', 'uniception', 'kagami-no-migaka'},
                          {slug for slug, _, verified in pages if verified=='true'})
-        self.assertIn('Pages address · deployment not yet verified', html)
+        self.assertIn('Source-only · no hosted installer or demo', html)
         self.assertIn("site.verified?'Open live page':'Open repository'", html)
         self.assertIn("document.documentElement.dataset.previewMode=localPreview?'local':'public'", html)
         for name in ['ouroboros-cipher', 'zalgo-cipher', 'twitterpainted', 'messageloggerfix']:
@@ -233,6 +235,39 @@ class PreviewTests(unittest.TestCase):
             '/apps/kagami-no-migaka/historical/recovered-design.md',
         ):
             self.assertEqual(404, self.request(route)[0])
+
+    def test_variant_catalog_covers_every_project_and_only_safe_public_routes(self):
+        html = (preview.ROOT / 'index.html').read_text(encoding='utf-8')
+        catalog = json.loads(re.search(r'<script type="application/json" id="variant-catalog">\s*(.*?)\s*</script>', html, re.DOTALL).group(1))
+        self.assertEqual(set(preview.APPS), set(catalog))
+        counts = {}
+        for slug, project in catalog.items():
+            entries = [entry for group in project['groups'] for entry in group['entries']]
+            self.assertTrue(project['note'])
+            self.assertEqual(len(entries), len({entry['path'] for entry in entries}))
+            counts[slug] = len(entries)
+            for entry in entries:
+                with self.subTest(slug=slug, path=entry['path']):
+                    parsed = urlsplit(entry['path'])
+                    if entry['kind'] == 'public':
+                        self.assertFalse(parsed.scheme or parsed.netloc)
+                        self.assertNotIn('..', parsed.path)
+                        route = '/apps/' + slug + '/' + parsed.path
+                        self.assertIn(route, preview.ALLOWED)
+                        self.assertEqual(200, self.request(route + ('?' + parsed.query if parsed.query else ''))[0])
+                    elif entry['kind'] == 'local':
+                        self.assertEqual('melody-cipher', slug)
+                        self.assertEqual('http://127.0.0.1:8766', parsed.scheme + '://' + parsed.netloc)
+                    else:
+                        self.assertEqual('source', entry['kind'])
+                        self.assertEqual('https://github.com/lilyofashwood/' + slug, entry['path'])
+        self.assertEqual({'chatlog-printer':2,'melody-cipher':12,'moon-tears':4,
+                          'ouroboros-cipher':4,'hexmoji':4,'zalgo-cipher':3,'font-garden':8,
+                          'diacritic-bloom':8,'uniception':17,'kagami-no-migaka':3,
+                          'ghost-hex':3,'twitterpainted':3,'messageloggerfix':1}, counts)
+        self.assertIn("localPreview||entry.kind!=='local'", html)
+        self.assertIn("details?.matches('.variants')", html)
+        self.assertIn("doors.dataset.searchOpened='true'", html)
 
 if __name__ == '__main__':
     unittest.main()
