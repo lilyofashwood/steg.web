@@ -80,7 +80,7 @@ const origins={
   "messageloggerfix": ["messageloggerfix-main", "Existing plugin unchanged; the source-review information page is new."]
 };
 function appendOriginDescription(parent,text){const literal=/\b(?:[A-Za-z0-9][A-Za-z0-9_.-]*\.(?:zip|html)|HX2|MUX3|PURR-1)\b/g;let offset=0;for(const match of text.matchAll(literal)){parent.append(document.createTextNode(text.slice(offset,match.index)));const code=document.createElement('code');code.textContent=match[0];parent.append(code);offset=match.index+match[0].length}parent.append(document.createTextNode(text.slice(offset)));}
-for(const card of cards){const slug=card.querySelector('.open').getAttribute('href').split('/')[2],entry=origins[slug];if(!entry)continue;const note=document.createElement('p');note.className='origin';appendOriginDescription(note,'Origin · '+entry[1]);note.append(document.createElement('br'),document.createTextNode('Local folder · '));const folder=document.createElement('code');folder.textContent=entry[0];note.append(folder);card.querySelector('h2').after(note);}
+for(const card of cards){const slug=card.querySelector('.open').getAttribute('href').split('/')[2],entry=origins[slug];card.dataset.slug=slug;if(!entry)continue;const note=document.createElement('p');note.className='origin';appendOriginDescription(note,'Origin · '+entry[1]);note.append(document.createElement('br'),document.createTextNode('Local folder · '));const folder=document.createElement('code');folder.textContent=entry[0];note.append(folder);card.querySelector('h2').after(note);}
 // Only addresses marked verified below have passed an explicit HTTP GET check.
 // Pending addresses are deliberately not presented as deployed sites.
 const pages={
@@ -106,6 +106,6 @@ if(!localPreview)document.querySelectorAll('.service,.start').forEach(element=>{
 dressNarrative(document.querySelector('main'));
 search.placeholder=houseText(search.placeholder);
 document.title=houseText(document.title);
-function filter(){const q=search.value.normalize('NFKC').toLocaleLowerCase().trim();let shown=0;for(const card of cards){card.hidden=!(category==='all'||card.dataset.category===category)||!card.textContent.normalize('NFKC').toLocaleLowerCase().includes(q);if(!card.hidden)shown++}count.textContent=shown+' of '+cards.length+' projects open for exploration';dressLabel(count);}
+function filter(){const q=search.value.normalize('NFKC').toLocaleLowerCase().trim();let shown=0;for(const card of cards){const searchable=card.dataset.slug+' '+card.textContent;card.hidden=!(category==='all'||card.dataset.category===category)||!searchable.normalize('NFKC').toLocaleLowerCase().includes(q);if(!card.hidden)shown++}count.textContent=shown+' of '+cards.length+' projects open for exploration';dressLabel(count);}
 search.addEventListener('input',filter);document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));filter()}));
 </script></body></html>

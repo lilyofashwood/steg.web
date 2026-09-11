@@ -160,6 +160,9 @@ class PreviewTests(unittest.TestCase):
         self.assertIn("accessible.textContent=plain", html)
         self.assertIn("element.setAttribute('aria-label',plain)", html)
         self.assertIn("search.value.normalize('NFKC')", html)
+        self.assertIn('card.dataset.slug=slug', html)
+        self.assertIn("const searchable=card.dataset.slug+' '+card.textContent", html)
+        self.assertIn("searchable.normalize('NFKC').toLocaleLowerCase().includes(q)", html)
         commands = re.findall(r'<pre>(.*?)</pre>', html, re.DOTALL)
         self.assertEqual([
             'python3 workspace-context/preview.py',
