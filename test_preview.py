@@ -269,5 +269,28 @@ class PreviewTests(unittest.TestCase):
         self.assertIn("details?.matches('.variants')", html)
         self.assertIn("doors.dataset.searchOpened='true'", html)
 
+    def test_legacy_compilation_note_is_explicit_fiction_with_a_forwarding_address(self):
+        html = (preview.ROOT / 'index.html').read_text(encoding='utf-8')
+        readme = unicodedata.normalize('NFKC', (preview.ROOT / 'README.md').read_text(encoding='utf-8'))
+        copy = ('A legacy compilation from Lily of Ashwood, the roleplay persona that took shape in 2024. '
+                'In the story, Lily has left the internet to live on a farm with the digital yōkai. '
+                'The workshops remain open.')
+        label = 'A forwarding address · Migaka’s final pass'
+        target = 'https://lilyofashwood.github.io/kagami-no-migaka/#the-farm'
+        for original in (copy, label):
+            self.assertIn(original, html)
+            self.assertIn(original.lower(), readme)
+        self.assertIn('id="lilys-forwarding-address" class="legacy-note" aria-labelledby="legacy-title"', html)
+        self.assertIn('href="' + target + '" aria-label="' + label + '"', html)
+        self.assertIn('](' + target + ')', readme)
+        self.assertIn("if(localPreview)document.getElementById('forwarding-address').href='/apps/kagami-no-migaka/#the-farm'", html)
+        self.assertEqual(200, self.request('/apps/kagami-no-migaka/')[0])
+        self.assertEqual(13, html.count('<article class="card"'))
+        catalog = json.loads(re.search(r'<script type="application/json" id="variant-catalog">\s*(.*?)\s*</script>', html, re.DOTALL).group(1))
+        entries = [entry for project in catalog.values() for group in project['groups'] for entry in group['entries']]
+        self.assertEqual(67, sum(entry['kind'] == 'public' for entry in entries))
+        self.assertEqual(4, sum(entry['kind'] == 'local' for entry in entries))
+        self.assertEqual(1, sum(entry['kind'] == 'source' for entry in entries))
+
 if __name__ == '__main__':
     unittest.main()
