@@ -16,7 +16,7 @@
 | [𝐨𝐮𝗋𝐨𝖻𝐨𝗋𝐨𝗌](https://github.com/lilyofashwood/ouroboros-cipher) | 𝗍𝗁𝐞 𝗆𝐞𝗌𝗌𝐚𝗀𝐞 𝐢𝗌 𝗍𝗁𝐞 𝗄𝐞𝗒; 𝐞𝗏𝐞𝗋𝗒 𝗏𝐚𝗅𝐢𝖽 𝗋𝐢𝗇𝗀 𝗋𝐞𝐚𝖽𝐢𝗇𝗀 |
 | [𝗁𝐞𝗑𝗆𝐨𝗃𝐢](https://github.com/lilyofashwood/hexmoji) | 𝖽𝐢𝗌𝗍𝐢𝗇𝖼𝗍 𝐞𝗆𝐨𝗃𝐢 𝖿𝐨𝗋𝗆𝐚𝗍𝗌 𝐚𝗇𝖽 𝗋𝐞𝖼𝐨𝗏𝐞𝗋𝐚𝖻𝗅𝐞 𝖻𝗒𝗍𝐞𝗌 |
 | [𝐮𝗇𝐢𝖼𝐞𝗉𝗍𝐢𝐨𝗇](https://github.com/lilyofashwood/uniception) | 𝖿𝐨𝗇𝗍 𝖼𝗁𝐚𝗇𝗇𝐞𝗅𝗌, 𝗅𝐚𝗒𝐞𝗋𝐞𝖽 𝗋𝐞𝐚𝖽𝐢𝗇𝗀𝗌 𝐚𝗇𝖽 𝗌𝗇𝐨𝗐𝗅𝐢𝗇𝐞/𝗆𝐢𝗋𝗋𝐨𝗋𝖿𝐚𝗅𝗅 |
-| [かのとこよ · 歌ノ常世](https://github.com/lilyofashwood/kanotokoyo) | かがみのしきしのみがか |
+| [𝗄𝐚𝗀𝐚𝗆𝐢-𝗇𝐨-𝗆𝐢𝗀𝐚𝗄𝐚](https://github.com/lilyofashwood/kagami-no-migaka) | かがみのしきしのみがか |
 | [𝖿𝐨𝗇𝗍 𝗀𝐚𝗋𝖽𝐞𝗇](https://github.com/lilyofashwood/font-garden) | 𝗌𝐞𝗏𝐞𝗇𝗍𝗒-𝐞𝐢𝗀𝗁𝗍 𝗏𝐨𝐢𝖼𝐞𝗌, 𝗋𝐞𝖼𝐢𝗉𝐞𝗌 𝐚𝗇𝖽 𝖼𝐮𝗌𝗍𝐨𝗆 𝖼𝐚𝗋𝗋𝐢𝐞𝗋𝗌 |
 | [𝖽𝐢𝐚𝖼𝗋𝐢𝗍𝐢𝖼 𝖻𝗅𝐨𝐨𝗆](https://github.com/lilyofashwood/diacritic-bloom) | 𝗅𝐞𝗍𝗍𝐞𝗋 𝖻𝐨𝖽𝐢𝐞𝗌 𝐚𝗇𝖽 𝗀𝐚𝗋𝖽𝐞𝗇𝗌 𝐨𝖿 𝖼𝐨𝗆𝖻𝐢𝗇𝐢𝗇𝗀 𝗆𝐚𝗋𝗄𝗌 |
 | [𝗓𝐚𝗅𝗀𝐨](https://github.com/lilyofashwood/zalgo-cipher) | 𝗅𝐞𝗀𝐚𝖼𝗒 𝗆𝐨𝖽𝐞𝗌 𝐚𝗇𝖽 𝐢𝗇𝖽𝐞𝗉𝐞𝗇𝖽𝐞𝗇𝗍 𝖽𝐢𝐚𝖼𝗋𝐢𝗍𝐢𝖼/𝐨𝗏𝐞𝗋𝗅𝐚𝗒 𝖼𝗁𝐚𝗇𝗇𝐞𝗅𝗌 |

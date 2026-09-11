@@ -97,14 +97,14 @@ class PreviewTests(unittest.TestCase):
     def test_current_names_and_retired_routes(self):
         self.assertIn('uniception', preview.APPS)
         self.assertEqual('steg-web', preview.APPS['uniception'][0])
-        self.assertIn('kanotokoyo', preview.APPS)
-        self.assertEqual('kasane-uta', preview.APPS['kanotokoyo'][0])
+        self.assertIn('kagami-no-migaka', preview.APPS)
+        self.assertEqual('kasane-uta', preview.APPS['kagami-no-migaka'][0])
         self.assertNotIn('kasane-uta', preview.APPS)
         self.assertNotIn('steg-web', preview.APPS)
         self.assertNotIn('veilscript-lab', preview.APPS)
         self.assertEqual(200, self.request('/apps/uniception/')[0])
-        self.assertEqual(200, self.request('/apps/kanotokoyo/')[0])
-        for route in ('/apps/migaka/', '/apps/kasane-uta/', '/apps/steg-web/', '/apps/veilscript-lab/', '/apps/veilscript-lab/core.js', '/archive/retired/veilscript-lab/index.html'):
+        self.assertEqual(200, self.request('/apps/kagami-no-migaka/')[0])
+        for route in ('/apps/kanotokoyo/', '/apps/migaka/', '/apps/kasane-uta/', '/apps/steg-web/', '/apps/veilscript-lab/', '/apps/veilscript-lab/core.js', '/archive/retired/veilscript-lab/index.html'):
             self.assertEqual(404, self.request(route)[0])
 
     def test_only_preserved_bloom_workshop_allows_same_origin_framing(self):
@@ -122,8 +122,8 @@ class PreviewTests(unittest.TestCase):
         self.assertEqual(13, html.count('<article class="card"'))
         self.assertIn('href="https://github.com/lilyofashwood"', html)
         self.assertIn('https://github.com/lilyofashwood/uniception', html)
-        self.assertIn('https://github.com/lilyofashwood/kanotokoyo', html)
-        self.assertIn('<h2>かのとこよ · 歌ノ常世</h2>', html)
+        self.assertIn('https://github.com/lilyofashwood/kagami-no-migaka', html)
+        self.assertIn('<h2>Kagami-no-Migaka</h2>', html)
         self.assertIn('かがみのしきしのみがか', html)
         self.assertNotIn('Replacement name pending', html)
         self.assertNotIn('<h2>Migaka</h2>', html)
@@ -202,7 +202,7 @@ class PreviewTests(unittest.TestCase):
         pages = re.findall(r"^  '([^']+)':\{url:'([^']+)',verified:(true|false)\}", html, re.MULTILINE)
         self.assertEqual(set(preview.APPS), {slug for slug, _, _ in pages})
         self.assertEqual({'ghost-hex', 'twitterpainted', 'zalgo-cipher', 'ouroboros-cipher',
-                          'chatlog-printer', 'melody-cipher', 'moon-tears', 'hexmoji', 'font-garden', 'diacritic-bloom', 'uniception', 'kanotokoyo'},
+                          'chatlog-printer', 'melody-cipher', 'moon-tears', 'hexmoji', 'font-garden', 'diacritic-bloom', 'uniception', 'kagami-no-migaka'},
                          {slug for slug, _, verified in pages if verified=='true'})
         self.assertIn('Pages address · deployment not yet verified', html)
         self.assertIn("site.verified?'Open live page':'Open repository'", html)
@@ -230,7 +230,7 @@ class PreviewTests(unittest.TestCase):
             '/apps/uniception/variants/nekomata-thread/tests/specimen.test.mjs',
             '/apps/uniception/variants/snowline-mirrorfall/public-source.json',
             '/apps/uniception/historical/stegweb-suite.py',
-            '/apps/kanotokoyo/historical/recovered-design.md',
+            '/apps/kagami-no-migaka/historical/recovered-design.md',
         ):
             self.assertEqual(404, self.request(route)[0])
 

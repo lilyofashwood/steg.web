@@ -20,7 +20,7 @@ APPS = {
     'font-garden': ('font-garden', ('index.html', 'font-garden.js', 'register-recipes.js', 'gallery.js', 'veil_script_font_garden_v0_2_1.html', 'presentation.js', 'presentation.css')),
     'diacritic-bloom': ('diacritic-bloom', ('index.html', 'diacritic-bloom.html', 'presentation.js', 'presentation.css')),
     'uniception': ('steg-web', ('index.html', 'style.css', 'core.js', 'lettering.js', 'app.js', 'variants/snowline-mirrorfall/demo.html', 'variants/snowline-mirrorfall/core.js', 'variants/snowline-mirrorfall/specimen.js', 'variants/snowline-mirrorfall/demo.js', 'variants/snowline-mirrorfall/demo.css', 'variants/nekomata-thread/index.html', 'variants/nekomata-thread/app.js', 'variants/nekomata-thread/specimen.js', 'variants/nekomata-thread/style.css')),
-    'kanotokoyo': ('kasane-uta', ('index.html', 'style.css', 'core.js', 'lettering.js', 'app.js')),
+    'kagami-no-migaka': ('kasane-uta', ('index.html', 'style.css', 'core.js', 'lettering.js', 'app.js')),
     'ghost-hex': ('ghost-hex-main', ('index.html', 'style.css', 'app.js', 'image.png')),
     'twitterpainted': ('twitterpainted/docs', ('index.html', 'twitterpainted.css', 'twitterpainted.js', 'steg-core.js')),
     'messageloggerfix': ('messageloggerfix-main', ('index.html',)),
