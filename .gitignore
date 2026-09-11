@@ -1,0 +1,9 @@
+# Public catalog allowlist. Private archives and work notes remain local.
+/*
+!/.gitignore
+!/README.md
+!/PREVIEW.md
+!/index.html
+!/preview.py
+!/test_preview.py
+!/.nojekyll
