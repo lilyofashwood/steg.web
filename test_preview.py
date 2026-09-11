@@ -39,7 +39,7 @@ class PreviewTests(unittest.TestCase):
 
     def test_all_literal_assets_exist_and_are_served(self):
         self.assertEqual(13, len(preview.APPS))
-        self.assertEqual(101, len(preview.ALLOWED))
+        self.assertEqual(110, len(preview.ALLOWED))
         for route, file in preview.ALLOWED.items():
             with self.subTest(route=route):
                 status, body, headers = self.request(route)
@@ -262,7 +262,7 @@ class PreviewTests(unittest.TestCase):
                         self.assertEqual('source', entry['kind'])
                         self.assertEqual('https://github.com/lilyofashwood/' + slug, entry['path'])
         self.assertEqual({'chatlog-printer':2,'melody-cipher':12,'moon-tears':4,
-                          'ouroboros-cipher':4,'hexmoji':4,'zalgo-cipher':3,'font-garden':8,
+                          'ouroboros-cipher':4,'hexmoji':4,'zalgo-cipher':3,'font-garden':10,
                           'diacritic-bloom':8,'uniception':17,'kagami-no-migaka':3,
                           'ghost-hex':3,'twitterpainted':3,'messageloggerfix':1}, counts)
         self.assertIn("localPreview||entry.kind!=='local'", html)
@@ -288,9 +288,29 @@ class PreviewTests(unittest.TestCase):
         self.assertEqual(13, html.count('<article class="card"'))
         catalog = json.loads(re.search(r'<script type="application/json" id="variant-catalog">\s*(.*?)\s*</script>', html, re.DOTALL).group(1))
         entries = [entry for project in catalog.values() for group in project['groups'] for entry in group['entries']]
-        self.assertEqual(67, sum(entry['kind'] == 'public' for entry in entries))
+        self.assertEqual(69, sum(entry['kind'] == 'public' for entry in entries))
         self.assertEqual(4, sum(entry['kind'] == 'local' for entry in entries))
         self.assertEqual(1, sum(entry['kind'] == 'source' for entry in entries))
+
+    def test_seam_workshop_serves_only_explicit_runtime_assets(self):
+        for route in ('/apps/font-garden/seams/', '/apps/font-garden/seams/index.html',
+                      '/apps/font-garden/seams/workshop.mjs', '/apps/font-garden/seams/codec.mjs',
+                      '/apps/font-garden/seams/seams.css', '/apps/font-garden/seams/trail.json',
+                      '/apps/font-garden/seams/vendor/uniception-core.mjs',
+                      '/apps/font-garden/seams/vendor/hexmoji-core.mjs',
+                      '/apps/font-garden/seams/vendor/zalgo-mux3.mjs'):
+            with self.subTest(route=route):
+                status, _, headers = self.request(route)
+                self.assertEqual(status, 200)
+                if route.endswith('.mjs'):
+                    self.assertTrue(headers['Content-Type'].startswith('text/javascript'))
+        packets = json.loads(self.request('/apps/font-garden/seams/trail.json')[1])
+        self.assertEqual(14, len(packets))
+        for route in ('/apps/font-garden/seams/seeds.json',
+                      '/apps/font-garden/seams/build-trail.mjs',
+                      '/apps/font-garden/seams/codec.test.mjs',
+                      '/apps/font-garden/seams/vendor/ghost-hex-ascii-reference.json'):
+            self.assertEqual(404, self.request(route)[0])
 
 if __name__ == '__main__':
     unittest.main()

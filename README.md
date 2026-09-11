@@ -75,3 +75,13 @@ python3 preview.py
 ∿ 𝗍𝗁𝐞 𝐚𝗋𝖼𝗁𝐢𝗏𝐞 𝗀𝗋𝐨𝗐𝗌 𝐢𝗍𝗌 𝐨𝗐𝗇 𝗌𝗍𝐚𝗋𝗌 ∿
 
 𝗍𝗁𝐞 𝖼𝐚𝗍𝐚𝗅𝐨𝗀 𝐢𝗌 𝗋𝐞𝗅𝐞𝐚𝗌𝐞𝖽 𝐮𝗇𝖽𝐞𝗋 𝗍𝗁𝐞 [𝗆𝐢𝗍 𝗅𝐢𝖼𝐞𝗇𝗌𝐞](LICENSE) · 𝗅𝐢𝗅𝗒𝐨𝖿𝐚𝗌𝗁𝗐𝐨𝐨𝖽. 𝐞𝐚𝖼𝗁 𝗅𝐢𝗇𝗄𝐞𝖽 𝗉𝗋𝐨𝗃𝐞𝖼𝗍 𝖼𝐚𝗋𝗋𝐢𝐞𝗌 𝐢𝗍𝗌 𝐨𝗐𝗇 𝗅𝐢𝖼𝐞𝗇𝗌𝐞.
+
+<!-- garden-seam:steg-web:start -->
+<section class="garden-seam" data-garden-seam="steg-web" aria-label="A seam in the garden">
+<h2>⟡ 𝐚 𝗌𝐞𝐚𝗆 𝐢𝗇 𝗍𝗁𝐞 𝗀𝐚𝗋𝖽𝐞𝗇 ⟡</h2>
+<pre class="garden-seam-wire literal" data-garden-raw data-literal>𝘄𝗲 𝐰𝐞𝗮𝘃𝗲 𝐚 𝐝𝐨𝐨𝐫𝐰𝐚𝐲 𝐨𝐮𝐭 𝐨𝐟 𝐰𝐞𝐚𝐭𝐡𝐞𝐫
+𝐚𝐧𝐝 𝐥𝐞𝐚𝐯𝐞 𝐭𝐡𝐞 𝐬𝐦𝐚𝐥𝐥𝐞𝐬𝐭 𝐡𝐢𝐧𝐠𝐞 𝐮𝐧𝐥𝐚𝐭𝐜𝐡𝐞𝐝󠅆󠅯󠅵󠅲󠅴󠅥󠅥󠅮󠄠󠅲󠅯󠅯󠅭󠅳󠄬󠄠󠅯󠅮󠅥󠄠󠅵󠅮󠅦󠅩󠅮󠅩󠅳󠅨󠅥󠅤󠄠󠅧󠅡󠅲󠅤󠅥󠅮󠄮󠄠󠅁󠄠󠅶󠅥󠅲󠅳󠅥󠄠󠅯󠅦󠄠󠅹󠅯󠅵󠅲󠄠󠅯󠅷󠅮󠄠󠅢󠅥󠅬󠅯󠅮󠅧󠅳󠄠󠅢󠅥󠅳󠅩󠅤󠅥󠄠󠅩󠅴󠄮</pre>
+<pre class="garden-seam-jewel literal" data-garden-raw data-literal>🍷🍥🍬🍣🍯🍭🍥</pre>
+<p class="garden-seam-hint"><a href="https://lilyofashwood.github.io/font-garden/seams/#steg-web" aria-label="Unfold this garden seam">𝐮𝗇𝖿𝐨𝗅𝖽 𝗍𝗁𝐞 𝗌𝐞𝐚𝗆 ↗</a></p>
+</section>
+<!-- garden-seam:steg-web:end -->

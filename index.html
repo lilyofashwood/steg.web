@@ -12,6 +12,17 @@
 /* The night garden: etched brass, plum ink, open doors rather than a flat shelf. */
 :root{--bg:#0c0b0f;--panel:#171318;--line:#4b393e;--text:#f2e6d8;--muted:#c3b1ad;--accent:#e5bd83;--gold:#deb77d;font-family:'STIX Two Math','STIXGeneral','Cambria Math',system-ui,sans-serif}body{background:radial-gradient(ellipse at 95% 9%,#562c443d,transparent 42%),radial-gradient(ellipse at 5% 45%,#4b34252b,transparent 45%),var(--bg)}main{max-width:1250px}.masthead{padding-bottom:18px;border-bottom:1px solid var(--line)}.seal{margin-right:8px}.hero{position:relative;max-width:none;padding:64px 180px 36px 0}.hero:after{content:'⟡';position:absolute;right:28px;top:68px;width:118px;height:118px;display:grid;place-items:center;color:var(--gold);font-size:38px;border:1px solid #9c73567a;outline:1px solid #9c735647;outline-offset:12px;border-radius:50%;background:repeating-conic-gradient(from 0deg,#d2a06800 0deg 44deg,#d2a06838 44deg 45deg)}h1{font-size:clamp(64px,10vw,112px);letter-spacing:-.05em;text-shadow:0 0 42px #c5954730}.intro{font-size:20px;max-width:64ch}.notice{background:#20181980;border-radius:2px}.origin-legend{max-width:90ch}.controls{padding-top:20px;border-top:1px solid var(--line)}input,button,.open{border-radius:2px}button[aria-pressed=true]{color:#261a18}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.card{--card-accent:var(--gold);padding:26px;border-radius:3px;background:radial-gradient(ellipse at top right,#65403317,transparent 60%),linear-gradient(140deg,#21181c,#131216 80%);box-shadow:inset 0 0 0 5px #100d1140;position:relative}.card:before{content:'';position:absolute;top:-1px;left:26px;width:62px;border-top:2px solid var(--card-accent)}.card[data-category=read]{--card-accent:#cb9ac2}.card[data-category=keep]{--card-accent:#d89499}.card .glyph{color:var(--card-accent);min-height:38px;font-size:30px}.card h2{font-size:30px;margin:18px 0 13px}.card p{font-size:15px;line-height:1.75}.card .limit{margin-top:0;color:#bca9a5}.open{background:#31231d;border-color:#816144;color:#f5d6a2}.links{margin-top:auto;padding-top:8px}.variants{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}.variants summary{font-size:15px;color:var(--card-accent);padding:3px 0}.variants[open] summary{margin-bottom:16px}.variant-group+.variant-group{margin-top:20px}.variant-group h3{font-size:13px;line-height:1.7;font-weight:400;color:#baaaa7;margin:0 0 8px}.variant-links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.variant-links a{display:flex;height:100%;align-items:center;gap:9px;padding:10px 11px;border:1px solid #57404480;color:#e7d3bc;background:#0c0b1040;text-decoration:none;font-size:13px;line-height:1.65;overflow-wrap:anywhere}.variant-links a:before{content:'⟢';color:var(--card-accent)}.variant-links a:hover{border-color:var(--card-accent);background:#3a242d}.card .variant-note{font-size:12px;line-height:1.7;margin:15px 0 0}.provenance{margin:18px 0 0;border-top:1px dotted var(--line);padding-top:10px}.provenance summary{font-size:12px;color:var(--muted)}.card .origin{margin:12px 0 0;border-color:#795c64;font-size:12px}.pages-note{opacity:.8}.poem{border-radius:2px;background:radial-gradient(ellipse at top left,#6a344a2b,transparent 70%),#151216;border-color:#705045;margin-top:48px;padding:34px}.poem-verses{color:#e5c9b4}.poem-thread{display:block;margin-bottom:28px}.start{border-radius:2px;background:#161216}footer{line-height:1.8}a,button{transition:background-color .16s,border-color .16s,color .16s}@media(max-width:800px){.hero{padding-right:130px}.hero:after{right:16px;top:78px;width:76px;height:76px}.card{padding:20px}.variant-links{grid-template-columns:1fr}}@media(max-width:620px){.hero{padding:36px 0 22px}.hero:after{display:none}.grid{grid-template-columns:1fr;gap:20px}.card{padding:23px}.variant-links{grid-template-columns:repeat(2,minmax(0,1fr))}.poem{padding:22px}.intro{font-size:18px}}@media(max-width:360px){.variant-links{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .legacy-note{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.42fr);gap:18px 32px;padding:24px 26px;margin:0 0 24px;border:1px solid #88606a70;border-left:2px solid #c89aaf;background:linear-gradient(115deg,#37223270,#171117);border-radius:3px 16px 3px 16px}.legacy-note h2{font-size:20px;color:#e6c5bd;line-height:1.6;margin:0 0 10px}.legacy-note p{font-size:14px;line-height:1.85;margin:0;color:var(--muted)}.forwarding-address{align-self:center;display:block;border-block:1px solid #9e795866;padding:16px 0;font-size:15px;line-height:1.8;text-decoration:none;overflow-wrap:anywhere}.forwarding-address:before{content:'⌁ ⟡';display:block;letter-spacing:.28em;color:#c69aad;margin-bottom:10px}@media(max-width:620px){.legacy-note{grid-template-columns:1fr;padding:21px 18px;gap:16px}.forwarding-address{font-size:14px;padding:13px 0}.forwarding-address:before{display:inline;margin-right:12px}}
+
+/* garden-seam:start */
+.garden-seam{display:block;position:relative;box-sizing:border-box;min-width:0;max-width:62rem;margin:2rem auto;padding:1.4rem 1.5rem;border:1px solid #8b779666;border-radius:18px;background:linear-gradient(120deg,#39214622,#264b4422);color:inherit;text-align:left}
+.garden-seam h2{font:inherit;font-size:1rem;letter-spacing:.04em;margin:0 0 .75rem;color:inherit}
+.garden-seam .garden-seam-wire,.garden-seam .garden-seam-jewel{display:block;box-sizing:border-box;width:auto;min-width:0;max-width:100%;max-height:none;margin:0;padding:.65rem .2rem;border:0;background:none;box-shadow:none;color:inherit;font:500 clamp(.9rem,2.2vw,1.12rem)/2 "Noto Sans Math","Cambria Math","Apple Symbols",system-ui,sans-serif;letter-spacing:normal;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;overflow:visible}
+.garden-seam .garden-seam-jewel{font-size:1.2rem;line-height:1.7}
+.garden-seam .garden-seam-hint{margin:.75rem 0 0;font-size:.84rem;line-height:1.7;color:inherit}
+.garden-seam .garden-seam-hint a{display:inline;padding:0;border:0;background:none;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:.25em}
+@media(max-width:480px){.garden-seam{padding:1.1rem .8rem;margin:1.4rem auto}}
+@media print{.garden-seam{display:none!important}}
+/* garden-seam:end */
 </style>
 </head>
 <body><main>
@@ -53,6 +64,16 @@ melody-cipher/.venv/bin/python melody-cipher/studio.py --port 8766
 python3 steg-web/server.py --port 8768
 python3 kasane-uta/server.py --port 8767</pre><p class="small">Uniception still lives in the local <code>steg-web</code> folder, so its command has not changed. If a service link refuses the connection, its server is not running. A static workshop cannot make BYOK calls; open the corresponding dedicated link instead. The source links identify the corresponding GitHub repositories.</p></details><p class="small">This shelf deliberately does not serve Markdown notes, archives, tests, background files, Python source, or Git internals. Use each repository’s GitHub link for its README and specifications. Existing in-demo documentation links may therefore return a deliberate 404 here.</p></section>
 <footer>⟦ 𝗍𝗁𝐞 𝗅𝐚𝗆𝗉 𝐢𝗌 𝗅𝐨𝖼𝐚𝗅. 𝗍𝗁𝐞 𝖽𝐨𝐨𝗋𝗌 𝐚𝗋𝐞 𝗒𝐨𝐮𝗋𝗌. ⟧<p>Each door keeps its own alphabet. Take a thread home; leave another for whoever comes next.</p></footer>
+
+<!-- garden-seam:steg-web:start -->
+<section class="garden-seam" data-garden-seam="steg-web" aria-label="A seam in the garden">
+<h2>⟡ 𝐚 𝗌𝐞𝐚𝗆 𝐢𝗇 𝗍𝗁𝐞 𝗀𝐚𝗋𝖽𝐞𝗇 ⟡</h2>
+<pre class="garden-seam-wire literal" data-garden-raw data-literal>𝘄𝗲 𝐰𝐞𝗮𝘃𝗲 𝐚 𝐝𝐨𝐨𝐫𝐰𝐚𝐲 𝐨𝐮𝐭 𝐨𝐟 𝐰𝐞𝐚𝐭𝐡𝐞𝐫
+𝐚𝐧𝐝 𝐥𝐞𝐚𝐯𝐞 𝐭𝐡𝐞 𝐬𝐦𝐚𝐥𝐥𝐞𝐬𝐭 𝐡𝐢𝐧𝐠𝐞 𝐮𝐧𝐥𝐚𝐭𝐜𝐡𝐞𝐝󠅆󠅯󠅵󠅲󠅴󠅥󠅥󠅮󠄠󠅲󠅯󠅯󠅭󠅳󠄬󠄠󠅯󠅮󠅥󠄠󠅵󠅮󠅦󠅩󠅮󠅩󠅳󠅨󠅥󠅤󠄠󠅧󠅡󠅲󠅤󠅥󠅮󠄮󠄠󠅁󠄠󠅶󠅥󠅲󠅳󠅥󠄠󠅯󠅦󠄠󠅹󠅯󠅵󠅲󠄠󠅯󠅷󠅮󠄠󠅢󠅥󠅬󠅯󠅮󠅧󠅳󠄠󠅢󠅥󠅳󠅩󠅤󠅥󠄠󠅩󠅴󠄮</pre>
+<pre class="garden-seam-jewel literal" data-garden-raw data-literal>🍷🍥🍬🍣🍯🍭🍥</pre>
+<p class="garden-seam-hint"><a href="https://lilyofashwood.github.io/font-garden/seams/#steg-web" aria-label="Unfold this garden seam">𝐮𝗇𝖿𝐨𝗅𝖽 𝗍𝗁𝐞 𝗌𝐞𝐚𝗆 ↗</a></p>
+</section>
+<!-- garden-seam:steg-web:end -->
 </main>
 <script type="application/json" id="variant-catalog">
 {
@@ -272,14 +293,24 @@ python3 kasane-uta/server.py --port 8767</pre><p class="small">Uniception still 
     ]
   },
   "font-garden": {
-    "note": "The catalog has 78 registers; the original mixer has 50 styles. Explore lettering, overlays, dividers, cleaning, and reverse views in the workshop.",
+    "note": "The catalog has 78 registers; the original mixer has 50 styles. The seam loom weaves font readings, Ghost Hex, Hexmoji, and two independent mark channels into one poem.",
     "groups": [
       {
-        "label": "The register cabinet",
+        "label": "The register cabinet & seam loom",
         "entries": [
           {
             "label": "Seventy-eight voices · catalog",
             "path": "index.html",
+            "kind": "public"
+          },
+          {
+            "label": "Seam loom · weave & unfold",
+            "path": "seams/index.html",
+            "kind": "public"
+          },
+          {
+            "label": "A lantern between the layers",
+            "path": "seams/index.html#font-garden",
             "kind": "public"
           }
         ]

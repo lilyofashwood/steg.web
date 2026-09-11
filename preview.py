@@ -17,7 +17,7 @@ APPS = {
     'ouroboros-cipher': ('ouroboros-cipher', ('index.html', 'style.css', 'core.js', 'typography.js', 'ui.js')),
     'hexmoji': ('hexmoji', ('index.html', 'style.css', 'core.js', 'ui.js', 'presentation.js', 'presentation.css')),
     'zalgo-cipher': ('zalgo-cipher-main', ('index.html', 'zalgo-cipher.html', 'zalgo-cipher-v2.html', 'zalgo-cipher-v3.html', 'v3.css', 'zalgo-v3.js', 'v3-ui.js', 'font-garden.js', 'register-recipes.js', 'bg_image.png')),
-    'font-garden': ('font-garden', ('index.html', 'font-garden.js', 'register-recipes.js', 'gallery.js', 'veil_script_font_garden_v0_2_1.html', 'presentation.js', 'presentation.css')),
+    'font-garden': ('font-garden', ('index.html', 'font-garden.js', 'register-recipes.js', 'gallery.js', 'veil_script_font_garden_v0_2_1.html', 'presentation.js', 'presentation.css', 'seams/index.html', 'seams/workshop.mjs', 'seams/seams.css', 'seams/codec.mjs', 'seams/trail.json', 'seams/vendor/uniception-core.mjs', 'seams/vendor/hexmoji-core.mjs', 'seams/vendor/zalgo-mux3.mjs')),
     'diacritic-bloom': ('diacritic-bloom', ('index.html', 'diacritic-bloom.html', 'presentation.js', 'presentation.css')),
     'uniception': ('steg-web', ('index.html', 'style.css', 'core.js', 'lettering.js', 'app.js', 'variants/snowline-mirrorfall/demo.html', 'variants/snowline-mirrorfall/core.js', 'variants/snowline-mirrorfall/specimen.js', 'variants/snowline-mirrorfall/demo.js', 'variants/snowline-mirrorfall/demo.css', 'variants/nekomata-thread/index.html', 'variants/nekomata-thread/app.js', 'variants/nekomata-thread/specimen.js', 'variants/nekomata-thread/style.css')),
     'kagami-no-migaka': ('kasane-uta', ('index.html', 'style.css', 'core.js', 'lettering.js', 'app.js')),
@@ -31,6 +31,7 @@ for slug, (folder, filenames) in APPS.items():
     for name in filenames:
         ALLOWED[f'/apps/{slug}/{name}'] = REPOS / folder / name
     ALLOWED[f'/apps/{slug}/'] = REPOS / folder / DEFAULTS.get(slug, 'index.html')
+ALLOWED['/apps/font-garden/seams/'] = REPOS / 'font-garden/seams/index.html'
 
 CSP = "; ".join((
     "default-src 'self'", "script-src 'self' 'unsafe-inline'",
